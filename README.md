@@ -1,41 +1,18 @@
 # Electrical-task3
 in this Task , I used DHT22 (Temperature and humidity) Sensor with ESp32
+We will use DHT22 temperature and humidity sensor with ESP32 and display the values on i2c LCD screen.
 
 <img width="539" alt="task3" src="https://github.com/EngGhadah/Electrical-task3/assets/173523352/af6c3b33-d90d-4b65-9af5-32915abe6f5d">
 
-#include "DHTesp.h"
-#include <LiquidCrystal_I2C.h>
-#define I2C_ADDR    0x27
-#define LCD_COLUMNS 16
-#define LCD_LINES   2
+A temperature sensor is a device that detects and measures the temperature of its environment and converts that measurement into an electrical signal. Temperature sensors are commonly used in a variety of applications, from industrial processes to consumer products.
 
-const int DHT_PIN = 15;
+There are many types of temperature sensors, including thermocouples, resistance temperature detectors (RTDs), thermistors, and infrared sensors. Each type has its own unique characteristics, advantages, and disadvantages, and the choice of sensor depends on the specific requirements of the application.
 
-DHTesp dhtSensor;
+Temperature sensors are used in a wide variety of applications, some of which include:
 
-LiquidCrystal_I2C lcd(I2C_ADDR, LCD_COLUMNS, LCD_LINES);
+HVAC Systems: Temperature sensors are used in heating, ventilation, and air conditioning systems to monitor and control the temperature of indoor spaces.
+Industrial Process Control: Temperature sensors are used in manufacturing processes to monitor and control the temperature of materials and equipment.
+Food Processing: Temperature sensors are used in the food industry to monitor the temperature of food products during storage and transport, as well as during cooking and processing.
+Automotive Applications: Temperature sensors are used in vehicles to monitor engine temperature and to control the operation of cooling systems.
 
-void setup() {
-
-  Serial.begin(115200);
-  dhtSensor.setup(DHT_PIN, DHTesp::DHT22);
-  lcd.init();
-  lcd.backlight();
-
-}
-
-void loop() {
-
-  TempAndHumidity  data = dhtSensor.getTempAndHumidity();
-  Serial.println("Temp: " + String(data.temperature, 1) + "°C");
-  Serial.println("Humidity: " + String(data.humidity, 1) + "%");
-  Serial.println("---");
-  
-  lcd.setCursor(0, 0);
-  lcd.print("  Temp: " + String(data.temperature, 1) + "\xDF"+"C  ");
-  lcd.setCursor(0, 1);
-  lcd.print(" Humidity: " + String(data.humidity, 1) + "% ");
-  lcd.print("Wokwi Online IoT");
-
-  delay(1000);
-}
+Simulation link:  https://wokwi.com/projects/403003885711413249
