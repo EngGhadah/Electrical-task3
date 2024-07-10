@@ -1,5 +1,5 @@
 # Electrical-task3
-in this Task , I used DHT22 (Temperature and humidity) Sensor with ESp32
+in this Task , I used DHT22 (Temperature and humidity) Sensor with ESp32.
 We will use DHT22 temperature and humidity sensor with ESP32 and display the values on i2c LCD screen.
 
 <img width="539" alt="task3" src="https://github.com/EngGhadah/Electrical-task3/assets/173523352/af6c3b33-d90d-4b65-9af5-32915abe6f5d">
